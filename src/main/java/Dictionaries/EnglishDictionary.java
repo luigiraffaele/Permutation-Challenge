@@ -16,7 +16,7 @@ public class EnglishDictionary implements IDictionary {
     private List<String> words;
     private String DICTIONARY_FILE_PATH = "src/main/resources/englishWords.txt";
 
-    public EnglishDictionary(List<String> words) throws IOException {
+    public EnglishDictionary() {
         this.words = readFileIntoList(DICTIONARY_FILE_PATH);
     }
 
