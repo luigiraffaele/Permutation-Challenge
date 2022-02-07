@@ -1,8 +1,6 @@
 package Dictionaries;
 
 import Interfaces.IDictionary;
-
-import java.io.IOException;
 import java.util.List;
 
 import static Utils.TextReader.readFileIntoList;
@@ -20,8 +18,12 @@ public class EnglishDictionary implements IDictionary {
         this.words = readFileIntoList(DICTIONARY_FILE_PATH);
     }
 
+
+    /**
+     * https://stackoverflow.com/questions/15824733/option-to-ignore-case-with-contains-method
+     * */
     @Override
     public Boolean isEnglishWord(String word) {
-        return null;
+        return words.stream().anyMatch(word::equalsIgnoreCase);
     }
 }
